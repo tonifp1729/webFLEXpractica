@@ -1,29 +1,20 @@
-/* FUENTES QUE VAMOS A EMPLEAR */
+/* FUENTES POR UTILIZAR */
 
-/* AJUSTES GENERALES DE LA PÁGINA */
-body, html {
+/* AJUSTES GENERALES */
+body {
     margin: 0;
     padding: 0;
-    background-color: rgba(94, 79, 79, 0.848);
 }
 
-img {
-    user-select: none;
-}
-
-/* header{
-
-} */
-
-main {
-    /* background-image: url('images/');
-    background-size: cover; */
-    /* height: 100%;
-    width: 100%; */
+/* #principal {         --> No tiene sentido la utilización de una caja flexible que coja todos los elementos de la página, teniendo elementos verticales como la cabecera que no van a ser afectados por estas características que aquí he dispuesto
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
+} */
+
+header {
+    background-color: #333;
+    padding: 20px;
 }
 
 #logo {
@@ -32,37 +23,84 @@ main {
     width: 15%;
 }
 
-/* BOTONES */
-button {
-    padding: 10px 20px;
-    background-color: #fff536;
-    color: rgb(0, 0, 0);
-    border: none;
+nav {
+    padding: 12px 0;
+    background-color: #444;
+    text-align: end;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
     border-radius: 5px;
-    cursor: pointer;
+    background-color: #666;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #67ff49;
-}
-
-button:active {
-    background-color: #4cb338;
-}
-
-.boton-importante {
-    padding: 10px 20px;
-    background-color: #00aaf8;
-    color: rgb(246, 246, 246);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.boton-importante:hover {
+nav a:hover {
     background-color: #c021ff;
 }
-
-.boton-importante:active {
+nav a:active {
     background-color: #7f18a7;
+}
+
+main {
+    display: flex;
+    color: white;
+}
+
+section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    background-color: #666;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+article div {
+    display: flex; /* Convertimos los div en contenedores flexibles */
+    flex-shrink: 2; /* Aplicamos flex-shrink a los div, Antonto */
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+article div img {
+    max-width: 300px;
+    max-height: 300px;
+    margin-right: 2rem;
+    background-color: black;
+}
+
+
+aside {
+    /* flex: 1;     -->    Esto no tiene sentido aquí, ya que su función sería la de distribuir el tamaño de los elementos de un modo equitativo entre ellos y la dimensión de estos en este ejemplo ya ha sido predefinida. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    padding: 0.5rem;
+    width: 20%;
+    min-width: 20%;
+}
+
+aside img {
+    height: 300px;
+    margin-top: 0.75rem;
+}
+
+footer {
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    text-align: end;
 }
